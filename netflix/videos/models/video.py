@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from core.db.models import PublishStateOptions
+
 
 class VideoQuerySet(models.QuerySet):
     def published(self):

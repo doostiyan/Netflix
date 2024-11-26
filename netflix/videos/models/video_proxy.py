@@ -1,5 +1,6 @@
 from django.db.models.signals import pre_save
 
+from core.db.receivers import publish_state_pre_save, slugify_pre_save
 from videos.models.video import Video
 
 
