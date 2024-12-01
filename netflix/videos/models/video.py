@@ -26,7 +26,7 @@ class Video(models.Model):
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    state = models.CharField(max_length=2, choices=PublishStateStateOptions.choices, default=PublishStateOptions.DRAFT)
+    state = models.CharField(max_length=2, choices=PublishStateOptions.choices, default=PublishStateOptions.DRAFT)
     publish_timestamp = models.DateTimeField(auto_now_add=False, auto_now=False, null=True, blank=True)
 
     objects = VideoManager()
