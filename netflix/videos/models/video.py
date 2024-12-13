@@ -9,12 +9,13 @@ class VideoQuerySet(models.QuerySet):
         now = timezone.now()
         return self.filter(
             state=PublishStateOptions.PUBLISH,
-            publish_timestamp_lte = now
+            publish_timestamp__lte = now
         )
 
 class VideoManager(models.Manager):
     def get_queryset(self):
         return VideoQuerySet(self.model, using=self._db)
+
     def published(self):
         return self.get_queryset().published()
 
